@@ -1,0 +1,83 @@
+include partials/head.pug
+script.
+  function add(){
+  var a = document.getElementById("txt1").value;
+  var b = document.getElementById("txt2").value;
+  var x = Number(a) + Number(b);
+  document.getElementById("result").innerHTML = "Result after Addition is: " + x;
+  }
+  function sub(){
+  var a = document.getElementById("txt1").value;
+  var b = document.getElementById("txt2").value;
+  var x = Number(a) - Number(b);
+  document.getElementById("result").innerHTML = "Result after Subtraction is: " + x;
+  }
+  function mul(){
+  var a = document.getElementById("txt1").value;
+  var b = document.getElementById("txt2").value;
+  var x = Number(a) * Number(b);
+  document.getElementById("result").innerHTML = "Result after Multiplication is: " + x;
+  }
+  function div(){
+  var a = document.getElementById("txt1").value;
+  var b = document.getElementById("txt2").value;
+  var x = Number(a) / Number(b);
+  document.getElementById("result").innerHTML = "Result after Division is: " + x;
+  }
+.container
+  .row
+    .col-sm-12
+      h1
+        | Hello #{welcomeMessage}, 
+        small Welcome to Dashboard
+      hr
+      .col-sm-6
+        h2.lead Simple Calculator
+        form#loginForm(method='get', action='/login')
+          .form-group
+            label(for='exampleInputEmail1') Enter 1st Number
+            input#txt1.form-control(type='text', name='num1')
+          .form-group
+            label(for='exampleInputPassword1') Enter 2nd Number
+            input#txt2.form-control(type='text', name='num2')
+          .form-group
+            button.btn.btn-primary(type='button', onclick='add()') Add
+            button.btn.btn-success(type='button', onclick='sub()') Subtract
+            button.btn.btn-warning(type='button', onclick='mul()') Mulitply
+            button.btn.btn-danger(type='button', onclick='div()') Divide
+        #result.well
+      .col-sm-6
+        h2.lead Calculate Expressions
+        form(method='post', action='/exp-result')
+          .form-group
+            label(for='exampleInputEmail1') Enter 1st Number
+            input#txt1.form-control(type='text', name='expression')
+          .form-group
+            button.btn.btn-primary(type='submit') Calculate
+        #result.well #{result}
+      .col-sm-12
+        h2.lead Sample Data Table
+        .table-responsive
+          table.table.table-striped.table-bordered
+            thead
+              tr
+                th S. No
+                th Name
+                th Email Address
+                th Phone #
+            tbody
+              tr
+                td 1
+                td Ghazi Khan
+                td ghazi@torinit.com
+                td 9168633492
+              tr
+                td 2
+                td Ajitem Sahasrabudhe
+                td ajitem@torinit.com
+                td 9168633491
+              tr
+                td 3
+                td Robin Sharma
+                td robin@torinit.com
+                td 9168633494        

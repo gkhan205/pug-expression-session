@@ -1,0 +1,27 @@
+{
+  "name": "day1task",
+  "version": "1.0.0",
+  "description": "Task for Day 1 Training on Node JS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "calc",
+    "login",
+    "static",
+    "html",
+    "pug",
+    "angular-expressions",
+    "express-sessions"
+  ],
+  "author": "Ghazi Khan",
+  "license": "ISC",
+  "dependencies": {
+    "angular-expressions": "^0.3.0",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-session": "^1.14.2",
+    "pug": "^2.0.0-beta6"
+  }
+}

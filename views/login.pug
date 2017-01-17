@@ -1,0 +1,15 @@
+include partials/head.pug
+.container
+  .row
+    .col-sm-4.col-sm-offset-4
+      h3.text-center Please enter your name to get access
+      form(method='post', action='/loginMethod')
+        .form-group
+          input.form-control(type='text', name='name', placeholder='Your Name')
+        //- .form-group
+        //-   label(for='exampleInputEmail1') Username
+        //-   input.form-control(type='text', name='uname', placeholder='Username')
+        //- .form-group
+        //-   label(for='exampleInputPassword1') Password
+        //-   input.form-control(type='password', name='pass', placeholder='Password')
+        button.btn.btn-success.btn-block(type='submit') Get Access
