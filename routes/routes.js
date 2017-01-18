@@ -1,8 +1,7 @@
 var ngexpr = require("angular-expressions");
 
 exports.index = function(req, res){
-	req.session.destroy();
-	res.render('index.pug', {});
+	res.render('index.pug', {user: req.session.userName});
 }
 
 exports.login = function(req, res){
@@ -32,15 +31,15 @@ exports.loginMethod = function(req, res){
 }
 
 exports.admin = function(req, res){
-	res.render('admin.pug', {});
+	res.render('admin.pug', {user: req.session.userName});
 }	
 
 exports.about = function(req, res){
-	res.render('about.pug', {});
+	res.render('about.pug', {user: req.session.userName});
 }	
 
 exports.services = function(req, res){
-	res.render('services.pug', {});
+	res.render('services.pug', {user: req.session.userName});
 }	
 
 exports.ExpResultHandler = function(req, res){
@@ -60,5 +59,5 @@ exports.ExpResultHandler = function(req, res){
 	}
 	
 	console.log("resultValue=%s resultString=%s", resultValue, resultString);
-	res.render('admin.pug', {result: resultString});
+	res.render('admin.pug', {result: resultString, user: req.session.userName});
 }//ExpResultHandler
